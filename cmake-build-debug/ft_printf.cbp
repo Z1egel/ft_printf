@@ -86,6 +86,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/mbennis/42/ft_printf/casts.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/mbennis/42/ft_printf/flags.c">
 			<Option target="ft_printf"/>
 		</Unit>

@@ -69,4 +69,4 @@ add_executable(ft_printf
         libft/libft.h
         ft_printf.c
         libftprintf.h
-        main.c flags.c simple_prints.c print_p.c print_c.c)
+        main.c flags.c simple_prints.c print_p.c print_c.c casts.c)

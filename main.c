@@ -16,7 +16,7 @@
 
 int 	main(void)
 {
-    printf("%ho|\n", );
-    /*ft_printf("%c|\n", 256);*/
+    printf("%d\n", printf("%lu\n", -42));
+    ft_printf("%d", ft_printf("%lu\n", -42));
 	return (0);
 }

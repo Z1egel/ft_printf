@@ -13,6 +13,8 @@
 #include "libftprintf.h"
 #include "libft/libft.h"
 
+extern int     return_length;
+
 void    set_flags(char **str, t_flags *flags)
 {
     while (**str == '#' || **str == '0' || **str == '-' || **str == '+'
@@ -83,21 +85,67 @@ void    print_flags(long long int nmb, int *spaces, t_flags *flags)
     nulls = flags->precision - ft_strlen(ft_itoa(nmb)) + ((nmb < 0) ? (1) : (0));
     *spaces = flags->width - ft_strlen(ft_itoa(nmb)) - ((nulls > 0) ? (nulls) : (0)) - ((flags->plus && nmb > 0) ? (1) : (0)) - ((flags->space && nmb > 0) ? (1) : (0));
     if (flags->space && nmb > 0)
+    {
         ft_putchar(' ');
+        return_length++;
+    }
     if (flags->plus && nmb > 0 && flags->minus)
+    {
         ft_putchar('+');
-    if (!flags->minus && !flags->zero)
-        print_spaces(*spaces);
-    if (flags->plus && nmb > 0 && !flags->minus)
-        ft_putchar('+');
-    if (nmb < 0 && flags->zero)
-        ft_putchar('-');
+        return_length++;
+    }
     if (flags->zero && flags->precision == -1)
     {
         print_nulls(*spaces);
         *spaces = 0;
     }
-    if (nmb < 0 && !flags->zero)
+    if (!flags->minus)
+        print_spaces(*spaces);
+    if (flags->plus && nmb > 0 && !flags->minus)
+    {
+        ft_putchar('+');
+        return_length++;
+    }
+    if (nmb < 0)
+    {
         ft_putchar('-');
+        return_length++;
+    }
+    print_nulls(nulls);
+}
+
+void    print_nondec_flags(long long int nmb, int *spaces, t_flags *flags, char tmp)
+{
+    int     nulls;
+
+    nulls = flags->precision - ft_strlen(ft_itoa(nmb)) + ((nmb < 0) ? (1) : (0)) - ((flags->hash) ? (2) : (0));
+    *spaces = flags->width - ft_strlen(ft_itoa(nmb)) - ((nulls > 0) ? (nulls) : (0)) - ((flags->plus && nmb > 0) ? (1) : (0)) - ((flags->space && nmb > 0) ? (1) : (0)) - ((flags->hash) ? (2) : (0));
+    if (flags->space && nmb > 0)
+    {
+        ft_putchar(' ');
+        return_length++;
+    }
+    if (flags->plus && nmb > 0 && flags->minus)
+    {
+        ft_putchar('+');
+        return_length++;
+    }
+    if (!flags->minus && !flags->zero)
+        print_spaces(*spaces);
+    if (flags->plus && nmb > 0 && !flags->minus)
+    {
+        ft_putchar('+');
+        return_length++;
+    }
+    if (flags->hash && (tmp == 'x' || tmp == 'X'))
+    {
+        ft_putstr((tmp == 'x') ? ("0x") : ("0X"));
+        return_length += 2;
+    }
+    if (flags->zero && flags->precision == -1)
+    {
+        print_nulls(*spaces);
+        *spaces = 0;
+    }
     print_nulls(nulls);
 }

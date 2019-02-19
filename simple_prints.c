@@ -13,10 +13,13 @@
 #include "libftprintf.h"
 #include "libft/libft.h"
 
+extern int     return_length;
+
 void    print_nulls(int n)
 {
-     if (n > 0)
+    if (n > 0)
     {
+        return_length += n;
         while (n)
         {
             ft_putchar('0');
@@ -29,6 +32,7 @@ void    print_spaces(int n)
 {
     if (n > 0)
     {
+        return_length += n;
         while (n)
         {
             ft_putchar(' ');
@@ -37,12 +41,13 @@ void    print_spaces(int n)
     }
 }
 
-void    ft_printnbr_base(long long int nmb, size_t len, char *base)
+void    ft_printnbr_base(long int nmb, size_t len, char *base)
 {
     if (nmb)
     {
         ft_printnbr_base(nmb / len, len, base);
         ft_putchar(base[nmb % len]);
+        return_length++;
     }
 }
 
@@ -67,6 +72,7 @@ void	print_dec(long long int nmb)
             ft_putchar(-1 * nmb + '0');
         else
             ft_putchar(nmb + '0');
+        return_length++;
     }
 }
 

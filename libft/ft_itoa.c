@@ -13,11 +13,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*ft_neg_itoa(int n)
+static char	*ft_neg_itoa(long long int n)
 {
-	size_t	len;
-	int		temp;
-	char	*str;
+	size_t			len;
+	long long int	temp;
+	char			*str;
 
 	len = 1;
 	temp = n;
@@ -40,11 +40,11 @@ static char	*ft_neg_itoa(int n)
 	return (NULL);
 }
 
-static char	*ft_pos_itoa(int n)
+static char	*ft_pos_itoa(long long int n)
 {
-	size_t	len;
-	int		temp;
-	char	*str;
+	size_t			len;
+	long long int	temp;
+	char			*str;
 
 	len = 0;
 	temp = n;
@@ -79,7 +79,7 @@ static char	*ft_zero_itoa(void)
 	return (NULL);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(long long int n)
 {
 	char	*str;
 

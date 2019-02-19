@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/Users/mbennis/42/ft_printf/casts.c
+libftprintf.h
+/Users/mbennis/42/ft_printf/libftprintf.h
+libft/libft.h
+/Users/mbennis/42/ft_printf/libft/libft.h
+
 /Users/mbennis/42/ft_printf/libft/libft.h
 stdio.h
 -
@@ -24,13 +30,5 @@ stdarg.h
 stdint.h
 -
 string.h
--
-
-/Users/mbennis/42/ft_printf/main.c
-libftprintf.h
-/Users/mbennis/42/ft_printf/libftprintf.h
-libft/libft.h
-/Users/mbennis/42/ft_printf/libft/libft.h
-stdio.h
 -
 

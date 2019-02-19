@@ -39,14 +39,23 @@ void    set_flags(char **str, t_flags *flags);
 void    set_width_precision(char **str, t_flags *flags);
 void    set_modifiers(char **str, t_flags *flags);
 void    print_flags(long long int nmb, int *spaces, t_flags *flags);
+void    print_nondec_flags(long long int nmb, int *spaces, t_flags *flags, char tmp);
 void    print_nulls(int n);
 void    print_spaces(int n);
 void	print_dec(long long int nmb);
 void    print_nmb(long long int nmb, int base, char *g_base);
+void	cast_d(va_list *ap, t_flags *flags);
+void	cast_x(va_list *ap, t_flags *flags, char tmp);
+void	cast_o(va_list *ap, t_flags *flags);
+void	cast_u(va_list *ap, t_flags *flags);
+void    print_o(long long int nmb, t_flags *flags);
+void    print_d(long long int nmb, t_flags *flags);
+void    print_x(long long int nmb, t_flags *flags, char tmp);
 void    print_p(void *ptr, t_flags *flags);
 void    print_c(char c, t_flags flags);
+void    print_u(long long int nmb, t_flags *flags);
 void    ft_putnbr_base(long long int nmb, char *base);
-void    ft_printnbr_base(long long int nmb, size_t len, char *base);
+void    ft_printnbr_base(long int nmb, size_t len, char *base);
 
 
 #endif

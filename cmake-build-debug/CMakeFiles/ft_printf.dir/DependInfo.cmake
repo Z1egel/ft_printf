@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/mbennis/42/ft_printf/casts.c" "/Users/mbennis/42/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/casts.c.o"
   "/Users/mbennis/42/ft_printf/flags.c" "/Users/mbennis/42/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/flags.c.o"
   "/Users/mbennis/42/ft_printf/ft_printf.c" "/Users/mbennis/42/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/ft_printf.c.o"
   "/Users/mbennis/42/ft_printf/libft/ft_atoi.c" "/Users/mbennis/42/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/libft/ft_atoi.c.o"
